@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Multilingual NLP Text Summarizer</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1>🌍 Multilingual Text Summarization Tool</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+<h3>Paste Article URL</h3>
+
+<input type="text" name="url"
+placeholder="Enter article URL">
+
+<br><br>
+
+<h3>Upload PDF</h3>
+
+<input type="file" name="pdf">
+
+<br><br>
+
+<h3>Or Paste Text</h3>
+
+<textarea name="text"
+placeholder="Paste text here..."></textarea>
+
+<br>
+
+<button type="submit">Summarize</button>
+
+</form>
+
+{% if language %}
+
+<h3>Detected Language: {{language}}</h3>
+
+{% endif %}
+
+
+{% if summary %}
+
+<h2>Summary</h2>
+
+<p>{{summary}}</p>
+
+{% endif %}
+
+
+{% if keywords %}
+
+<h3>Keywords</h3>
+
+<ul>
+
+{% for word in keywords %}
+
+<li>{{word}}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+
+<img src="{{ url_for('static', filename='wordcloud.png') }}">
+
+</body>
+
+</html>
