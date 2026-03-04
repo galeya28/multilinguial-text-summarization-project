@@ -1,0 +1,9 @@
+flask
+transformers
+torch
+langdetect
+pdfplumber
+yake
+wordcloud
+matplotlib
+newspaper3k
