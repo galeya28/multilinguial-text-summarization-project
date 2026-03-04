@@ -7,3 +7,5 @@ yake
 wordcloud
 matplotlib
 newspaper3k
+lxml
+gunicorn
